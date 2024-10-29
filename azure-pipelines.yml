@@ -15,3 +15,10 @@ steps:
     tags: |
       $(Build.BuildId)
       latest
+
+- task: Docker@2
+  inputs:
+    containerRegistry: 'dockeracrrm98246'
+    repository: 'dotnetsql'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
